@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Palette</title>
+    <style>
+        .color-box {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #color-history {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Palette</h1>
+    <p>Select a color from the palette:</p>
+    <div class="color-box" style="background-color: red;" onclick="changeColor('red')"></div>
+    <div class="color-box" style="background-color: green;" onclick="changeColor('green')"></div>
+    <div class="color-box" style="background-color: blue;" onclick="changeColor('blue')"></div>
+    <div class="color-box" style="background-color: yellow;" onclick="changeColor('yellow')"></div>
+    <div class="color-box" style="background-color: magenta;" onclick="changeColor('magenta')"></div>
+    <div class="color-box" style="background-color: cyan;" onclick="changeColor('cyan')"></div>
+
+    <p>Selected Color: <span id="selected-color" style="font-weight: bold;">[None]</span></p>
+    <h2 align="right">Color History:</h2>
+    <ul id="color-history"></ul>
+
+    <script>
+        function changeColor(color) {
+            document.getElementById('selected-color').textContent = 'Hello World!';
+            document.getElementById('selected-color').style.color = color;
+            
+            const historyList = document.getElementById('color-history');
+            const listItem = document.createElement('li');
+            listItem.textContent = color;
+            listItem.style.color = color;
+            historyList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
